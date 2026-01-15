@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiFi Tester - Support & User Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+        .logo {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 14px;
+        }
+        h2 {
+            color: #444;
+            font-size: 22px;
+            margin: 35px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+        h3 {
+            color: #555;
+            font-size: 18px;
+            margin: 25px 0 12px 0;
+        }
+        p, li {
+            color: #555;
+            margin-bottom: 12px;
+        }
+        ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .feature-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+        }
+        .feature-card .icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        .feature-card h4 {
+            color: #333;
+            margin-bottom: 8px;
+        }
+        .feature-card p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+        .tip-box {
+            background: #fff3cd;
+            padding: 16px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+        .tip-box strong {
+            color: #856404;
+        }
+        .info-box {
+            background: #e3f2fd;
+            padding: 16px;
+            border-radius: 8px;
+            border-left: 4px solid #2196f3;
+            margin: 20px 0;
+        }
+        .faq-item {
+            background: #f8f9fa;
+            padding: 16px;
+            border-radius: 8px;
+            margin: 12px 0;
+        }
+        .faq-item strong {
+            color: #333;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 40px;
+            color: white;
+        }
+        .contact-section h2 {
+            color: white;
+            border-bottom: none;
+            margin-top: 0;
+        }
+        .contact-section a {
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            padding: 12px 24px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 15px;
+        }
+        .contact-section a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #999;
+            font-size: 14px;
+        }
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .lang-switch a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin: 15px 0;
+        }
+        .step-num {
+            background: #667eea;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-switch">
+            <a onclick="showEnglish()">English</a> | <a onclick="showChinese()">中文</a>
+        </div>
+
+        <div class="header">
+            <div class="logo">📶</div>
+            <h1>WiFi Tester</h1>
+            <p class="subtitle">Support & User Guide | 帮助与使用指南</p>
+        </div>
+
+        <!-- Chinese Version -->
+        <div id="zh-content">
+            <h2>📱 功能介绍</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="icon">🔍</div>
+                    <h4>网络诊断</h4>
+                    <p>一键检测 WiFi 连接状态、网关连通性、DNS 解析和互联网访问</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📡</div>
+                    <h4>Ping 测试</h4>
+                    <p>测试到任意服务器的网络延迟，支持自定义目标地址</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">⚡</div>
+                    <h4>网速测试</h4>
+                    <p>测量实际下载和上传速度，了解真实网络带宽</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">💻</div>
+                    <h4>设备扫描</h4>
+                    <p>发现局域网内所有连接的设备，查看 IP 和 MAC 地址</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🌐</div>
+                    <h4>DNS 查询</h4>
+                    <p>查询域名解析结果，诊断 DNS 相关问题</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🚪</div>
+                    <h4>端口扫描</h4>
+                    <p>检测目标主机开放的端口，了解网络服务状态</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🛤️</div>
+                    <h4>路由追踪</h4>
+                    <p>追踪数据包传输路径，定位网络瓶颈</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📊</div>
+                    <h4>稳定性测试</h4>
+                    <p>长时间监测网络稳定性和丢包情况</p>
+                </div>
+            </div>
+
+            <h2>🚀 快速开始</h2>
+
+            <h3>首次使用设置</h3>
+            <div class="step">
+                <div class="step-num">1</div>
+                <div>打开应用后，系统会请求<strong>位置权限</strong>。请选择"使用 App 时允许"以获取 WiFi 名称显示功能。</div>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div>当提示<strong>本地网络权限</strong>时，请点击"允许"以启用设备扫描和网络诊断功能。</div>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div>连接到 WiFi 网络后，即可开始使用所有功能。</div>
+            </div>
+
+            <div class="tip-box">
+                <strong>💡 提示：</strong> 位置权限仅用于获取 WiFi 网络名称（这是 iOS 系统要求），我们不会记录或上传您的位置信息。
+            </div>
+
+            <h3>网络诊断使用方法</h3>
+            <p>点击首页的"开始诊断"按钮，应用将自动执行以下检测：</p>
+            <ul>
+                <li><strong>WiFi 连接：</strong> 检查是否已连接到 WiFi 网络</li>
+                <li><strong>路由器连通：</strong> 测试与网关的连接状态</li>
+                <li><strong>DNS 解析：</strong> 验证域名解析是否正常</li>
+                <li><strong>互联网访问：</strong> 确认是否能访问外网</li>
+            </ul>
+
+            <h3>网速测试使用方法</h3>
+            <div class="step">
+                <div class="step-num">1</div>
+                <div>进入"网速测试"功能页面</div>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div>点击"开始测试"按钮</div>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div>等待下载和上传测试完成（约 30 秒）</div>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <div>查看测试结果，包括下载速度、上传速度和延迟</div>
+            </div>
+
+            <h2>❓ 常见问题</h2>
+
+            <div class="faq-item">
+                <strong>Q: 为什么看不到 WiFi 名称？</strong>
+                请确保已授予位置权限。前往 设置 → WiFi Tester → 位置，选择"使用 App 时"。
+            </div>
+
+            <div class="faq-item">
+                <strong>Q: 设备扫描找不到设备？</strong>
+                请确保已授予本地网络权限。某些设备可能不响应扫描请求，这是正常现象。
+            </div>
+
+            <div class="faq-item">
+                <strong>Q: 测速结果与运营商标称不符？</strong>
+                这可能是因为：WiFi 信号弱、路由器性能限制、同时有其他设备占用带宽、或测试服务器距离较远。
+            </div>
+
+            <div class="faq-item">
+                <strong>Q: 如何清除历史记录？</strong>
+                前往 设置 → 数据管理 → 清除所有数据。
+            </div>
+
+            <div class="contact-section">
+                <h2>📧 需要帮助？</h2>
+                <p>如果您有任何问题或建议，欢迎随时联系我们</p>
+                <a href="mailto:wifitester.team@gmail.com">wifitester.team@gmail.com</a>
+            </div>
+        </div>
+
+        <!-- English Version -->
+        <div id="en-content" style="display: none;">
+            <h2>📱 Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="icon">🔍</div>
+                    <h4>Network Diagnosis</h4>
+                    <p>One-tap detection of WiFi connection, gateway, DNS, and internet access</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📡</div>
+                    <h4>Ping Test</h4>
+                    <p>Test network latency to any server with custom target address</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">⚡</div>
+                    <h4>Speed Test</h4>
+                    <p>Measure actual download and upload speeds</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">💻</div>
+                    <h4>Device Scan</h4>
+                    <p>Discover all devices on your local network</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🌐</div>
+                    <h4>DNS Lookup</h4>
+                    <p>Query domain name resolution results</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🚪</div>
+                    <h4>Port Scan</h4>
+                    <p>Detect open ports on target hosts</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🛤️</div>
+                    <h4>Traceroute</h4>
+                    <p>Trace packet transmission path</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📊</div>
+                    <h4>Stability Test</h4>
+                    <p>Monitor network stability and packet loss</p>
+                </div>
+            </div>
+
+            <h2>🚀 Getting Started</h2>
+
+            <h3>Initial Setup</h3>
+            <div class="step">
+                <div class="step-num">1</div>
+                <div>When prompted for <strong>Location Permission</strong>, select "While Using the App" to enable WiFi name display.</div>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div>When prompted for <strong>Local Network Permission</strong>, tap "Allow" to enable device scanning and network diagnostics.</div>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div>Connect to a WiFi network and start using all features.</div>
+            </div>
+
+            <div class="tip-box">
+                <strong>💡 Tip:</strong> Location permission is only used to get WiFi network name (required by iOS). We do not record or upload your location.
+            </div>
+
+            <h3>Using Network Diagnosis</h3>
+            <p>Tap "Start Diagnosis" on the home page. The app will automatically check:</p>
+            <ul>
+                <li><strong>WiFi Connection:</strong> Whether connected to WiFi</li>
+                <li><strong>Router Connectivity:</strong> Gateway connection status</li>
+                <li><strong>DNS Resolution:</strong> Domain name resolution</li>
+                <li><strong>Internet Access:</strong> External network access</li>
+            </ul>
+
+            <h3>Using Speed Test</h3>
+            <div class="step">
+                <div class="step-num">1</div>
+                <div>Go to "Speed Test" feature</div>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div>Tap "Start Test"</div>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div>Wait for download and upload tests (~30 seconds)</div>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <div>View results including download speed, upload speed, and latency</div>
+            </div>
+
+            <h2>❓ FAQ</h2>
+
+            <div class="faq-item">
+                <strong>Q: Why can't I see the WiFi name?</strong>
+                Please ensure location permission is granted. Go to Settings → WiFi Tester → Location, select "While Using".
+            </div>
+
+            <div class="faq-item">
+                <strong>Q: Device scan not finding devices?</strong>
+                Ensure local network permission is granted. Some devices may not respond to scans - this is normal.
+            </div>
+
+            <div class="faq-item">
+                <strong>Q: Speed test results differ from ISP claims?</strong>
+                This may be due to: weak WiFi signal, router limitations, other devices using bandwidth, or distant test servers.
+            </div>
+
+            <div class="faq-item">
+                <strong>Q: How to clear history?</strong>
+                Go to Settings → Data Management → Clear All Data.
+            </div>
+
+            <div class="contact-section">
+                <h2>📧 Need Help?</h2>
+                <p>If you have any questions or suggestions, feel free to contact us</p>
+                <a href="mailto:wifitester.team@gmail.com">wifitester.team@gmail.com</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 WiFi Tester. All Rights Reserved.</p>
+            <p style="margin-top: 10px;"><a href="privacy.html" style="color: #667eea; text-decoration: none;">Privacy Policy</a></p>
+        </div>
+    </div>
+
+    <script>
+        function showEnglish() {
+            document.getElementById('zh-content').style.display = 'none';
+            document.getElementById('en-content').style.display = 'block';
+        }
+        function showChinese() {
+            document.getElementById('zh-content').style.display = 'block';
+            document.getElementById('en-content').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
